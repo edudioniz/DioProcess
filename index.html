@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>DioProgress</title>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script src="DioProgress.js"></script>
+		<link rel="stylesheet" type="text/css" href="DioProgress.css"/>
+
+	</head>
+	<body>
+		<h1>Ejemplos de DioProgress</h1>
+
+		</br>
+		<p>Ejemplo basico con animacion lenta<p>
+		<div id="progressBar"></div>
+
+		</br>
+		<p>Ejemplo basico con animacion rapida y degrado<p>
+		<div id="progressBar2"></div>
+
+		</br>
+		<p>Ejemplo basico con animacion XL<p>
+		<div id="progressBar4"></div>
+
+		</br>
+		<p>Ejemplo basico con animacion rapida , degrado y multiples movimientos<p>
+		<div id="progressBar3"></div>
+		<button onclick="move('10')"> Mover a un 10% </button>
+		<button onclick="move('40')"> Mover a un 40% </button>
+		<button onclick="move('70')"> Mover a un 70% </button>
+
+
+
+		<script>
+		$( "#progressBar" ).appendSimpleProgressBar();
+		$( "#progressBar" ).slow( { width:"40" } );
+
+		$( "#progressBar2" ).appendSimpleProgressBar({ background_bar: "orange"});
+		$( "#progressBar2" ).fast( { width:"80" , opacity: "0.40" } );
+
+		$( "#progressBar3" ).appendSimpleProgressBar({ background_bar: "red"});
+		function move(var_width){
+			$( "#progressBar3" ).fast( { width: var_width , opacity: "0.40" } );
+		}
+
+		$( "#progressBar4" ).appendSimpleXlProgressBar({ background_bar: "purple"});
+		$( "#progressBar4" ).fast( { width:"48" , opacity: "0.70" } );
+
+		</script>
+
+	</body>
+</html>
